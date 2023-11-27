@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  cursor: none;
+}
+.navbar{
+  background-color:#E3D5CA;
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
+
+
+.diff1{
+  background-color:#D5BDAF;
+}
+.intro{
+  background-color: white;
+  color:#D5BDAF;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-text{
+  opacity:0;
+  transform:translateY(50px)
+}
+
+/*.about-section{
+ 
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 0;
+  
+}
+*/
+
+
+
+.aboutme-text{
+  
+  padding-top:120px;
+  opacity:0;
+  transform:translateY(50px)
+}
+
+.about-container{
+  opacity: 0;
+  transform:translateY(50px)
+}
+
+.skillset-text{
+  opacity: 0.2;
+  transform:translateY(50px)
+}
+
+.skillset-description{
+  opacity: 0.2;
+  transform:translateY(50px)
+}
+
+.projects-text{
+  opacity: 0.2;
+  transform:translateY(50px)
+}
+
+.contact-text{
+  opacity: 0.2;
+  transform:translateY(50px)
+}
+
+
+.contact-details{
+  opacity: 0.2;
+  transform:translateY(50px)
+}
+.wrapimage-container{
+  margin:10px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float:left;
+  
+}
+
+.footer {
+ overflow-x: hidden; /* Hide any content overflowing horizontally */
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #bc6c25;
+  z-index: 2000;
+  user-select: none;
+  pointer-events: none;
+  visibility: visible;
+}
+
+
+.project-img{
+  cursor:none;
+}
+
+@media screen and (max-width:767px) {
+  .cursor{
+    width:0px;
+    height: 0px;
+    visibility: visible;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
