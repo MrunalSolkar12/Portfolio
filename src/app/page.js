@@ -468,8 +468,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bouncy-trigger">
-        <div className="bouncy-element">
+      
           <div className="diff aspect-[16/14] lg:aspect-[16/7]">
             <div className="diff-item-1">
               <div className="diff1 bg-black text-white font-black grid place-content-center text-6xl pl-16 lg:text-9xl">
@@ -545,7 +544,7 @@ export default function Home() {
 
                 <h2 className="about-text text-lg pt-4 font-light  lg:text-4xl lg:pt-16 ">
                   {" "}
-                  I am an independent Full-0Stack developer, primarly frontend developer based in Mumbai, India.
+                  I am an independent Full-Stack developer, primarly frontend developer based in Mumbai, India.
                 </h2>
 
                 <h2 className="about-text text-lg pt-6 font-light lg:text-4xl lg:pt-16">
@@ -966,8 +965,7 @@ export default function Home() {
           {/*Footer Section Ends*/}
 
           {/* Introduction Section Ends*/}
-        </div>
-      </div>
+      
       </div>
     </>
   );
