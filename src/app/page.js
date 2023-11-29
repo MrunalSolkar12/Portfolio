@@ -740,7 +740,7 @@ export default function Home() {
                   >
                     <Image 
                       className="project-img w-screen h-80 duration-700 ease-in-out group-hover:scale-105 lg:h-auto"
-                      src="/images/Capture.png"
+                      src="/images/pixels.png"
                       alt="IBGroup vietnam website mockup"
                       width={2000}
                       height={2000}
@@ -785,7 +785,7 @@ export default function Home() {
                   >
                     <Image
                       className="project-img  w-screen h-64 duration-700 ease-in-out group-hover:scale-105 lg:h-auto"
-                      src="/images/WhiteBoard2.png"
+                      src="/images/white-board.png"
                       alt="IBGroup vietnam website mockup"
                       width={2000}
                       height={2000}
