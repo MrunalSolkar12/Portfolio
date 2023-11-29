@@ -1,98 +1,72 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+//import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-import Scrollbar from 'smooth-scrollbar';
+//import Scrollbar from 'smooth-scrollbar';
 import "gsap/EasePack";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   useEffect(() => {
-    const scrollDistance = 100; // Adjust the distance as needed
-    const targetScrollPosition = window.scrollY + scrollDistance;
+    
+    //const scrollDistance = 100; // Adjust the distance as needed
+    //const targetScrollPosition = window.scrollY + scrollDistance;
 
     // Set the scroll position with smooth scrolling using standard JavaScript
-    gsap.to(window, {
+    /*gsap.to(window, {
       duration: 2, // Animation duration in seconds
       scrollTo: { y: 300, autoKill: true },
       ease: "power2.out", // Easing function
     });
-
-    //Navbar Animation
-    /*
-    gsap.from('.navbar', {
-      y: 100, // Move the navbar up by 100 pixels
-      duration: 10, // Animation duration in seconds
-      opacity: 1, // Optionally, you can add opacity transition
-      ease: 'power2', // Easing function
-      scrub:1
-    });
-    */
-    gsap.to(".intro", {
+*/
+    
+   /* gsap.to(".intro", {
       scrollTrigger: {
         trigger: ".intro",
         start: "top 40%",
-        end: "bottom 30%",
+        end: "2% 20%",
         markers: false,
-
-        scrub: 2,
+        scrub: 4,
         onUpdate: (self) => {
           // Update the background color dynamically based on scroll position
           const progress = self.progress;
           const backgroundColor = progress > 0 ? "black" : "white";
-          const navbarbackgroundColor = progress > 0 ? "black" : "#E3D5CA";
-          const DiffbackgroundColor = progress > 0 ? "black" : "#D5BDAF";
-          const textColor = progress > 0 ? "white" : "initial"; // Set to initial to use the default text color
-          const navtextColor = progress > 0 ? "white" : "initial"; // Set to initial to use the default text color
-          const introtextColor = progress > 0 ? "#b08968" : "#D5BDAF";
+          const navbarbackgroundColor = progress > 0 ? "black" : "white";
+          const DiffbackgroundColor = progress > 0 ? "black" : "#b39c4d";
+          const textColor = progress > 0 ? "white" : "white"; // Set to initial to use the default text color
+          const navtextColor = progress > 0 ? "white" : "black"; // Set to initial to use the default text color
+          const introtextColor = progress > 0 ? "#b39c4d" : "#b39c4d";
 
           gsap.to(".intro", {
             backgroundColor,
             color: introtextColor,
-            duration: 0.8,
-            ease: "power2", // Use an easing function for a smoother transition
-            overwrite: "auto",
+            duration: 0.5,
+            ease: "power2.easeOut", // Use an easing function for a smoother transition
           });
 
           gsap.to(".navbar", {
             backgroundColor: navbarbackgroundColor,
             color: navtextColor,
-            duration: 0.8,
-            ease: "power2", // Use an easing function for a smoother transition
+            position:"fixed",
+            duration: 1,
+            ease: "power2.Out", // Use an easing function for a smoother transition
           });
           gsap.to(".diff1", {
             backgroundColor: DiffbackgroundColor,
             color: textColor,
             duration: 0.8,
-            ease: "power2", // Use an easing function for a smoother transition
+            ease: "power2.easeOut", // Use an easing function for a smoother transition
           });
 
-          // Update the scrollTrigger dynamically
+         
         },
       },
     });
-
-    // Bounce Animation
-
-    /* gsap.to(".bouncy-element", {
-      y: (index, target, array) => {
-        // Move less when scrolling upward and more when scrolling downward
-        const scrollDirection = array[0].direction;
-        return scrollDirection === 1 ? 1 : -1;
-      },
-      ease: "power2.inOut", // Use bounce easing
-      scrollTrigger: {
-        trigger: ".bouncy-trigger",
-        start: "10% 10%", // Adjust start position as needed
-        // Adjust end position as needed
-        scrub: 4, // Adjust the scrub value for smoothness
-        markers: false,
-      },
-    });
-    */
+*/
+   
 
     // Get the text and container elements
     const text = document.querySelector(".aboutme-text");
@@ -102,16 +76,46 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Create a timeline for the animation
-    const tl = gsap.timeline({
+   const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         start: "top 60%", // Adjust the start position as needed
-        end: "bottom 50%", // Adjust the end position as needed
-        scrub: 2, // Smoothly animate the timeline as you scroll
+        end: "30% 70%", // Adjust the end position as needed
+        scrub:4, // Smoothly animate the timeline as you scroll
         markers: false, // Show markers for debugging (remove in production)
       },
     });
+    
 
+    gsap.to(".intro", {
+      backgroundColor: "white",
+      duration: 0.2,
+      ease: "Linear.easeNone",
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "30% 70%",
+        scrub: 4,
+        markers: false,
+      },
+    });
+
+    gsap.to(".navbar", {
+      backgroundColor: "white",
+      color: "black",
+      duration: 0.1,
+      ease: "Linear.easeNone",
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "30% 70%",
+        scrub: 4,
+        markers: false,
+      },
+    });
+
+
+    
     const t2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".professional-skillset",
@@ -125,7 +129,7 @@ export default function Home() {
     const t3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".projects-text",
-        start: "top 70%", // Adjust the start position as needed
+        start: "top 80%", // Adjust the start position as needed
         // Adjust the end position as needed
         scrub: 2, // Smoothly animate the timeline as you scroll
         markers: false, // Show markers for debugging (remove in production)
@@ -136,9 +140,9 @@ export default function Home() {
       scrollTrigger: {
         trigger: ".contact-text ",
         start: "top 70%", // Adjust the start position as needed
-        // Adjust the end position as needed
-        scrub: 2, // Smoothly animate the timeline as you scroll
-        markers: false, // Show markers for debugging (remove in production)
+        end : "center 50%",
+        scrub: 4, // Smoothly animate the timeline as you scroll
+        markers: true, // Show markers for debugging (remove in production)
       },
     });
 
@@ -166,16 +170,32 @@ export default function Home() {
     tl.to(text, {
       opacity: 1,
       y: 0,
-      duration: 0.2, // Adjust the duration as needed
+      duration: 1, // Adjust the duration as needed
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
 
     tl.to(".about-container", {
+      color:"black",
       opacity: 1,
       y: 0,
       duration: 0.2, // Adjust the duration as needed
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
+
+   
+
+    tl.to(".skillset-innertext", {
+      color:"black",
+      opacity: 1,
+      y: 0,
+      duration: 0.2, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    
+
+
+   
 
     t2.to(".skillset-text", {
       opacity: 1,
@@ -191,10 +211,31 @@ export default function Home() {
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
 
-    t3.to(".projects-text", {
+
+
+    t3.to(".projects-text",{
       opacity: 1,
       y: 0,
       duration: 0.2, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    t3.to(".intro,.navbar", {
+      backgroundColor:"black",
+      duration: 0.2, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    t3.to(".navbar", {
+      color:"white",
+      duration: 0.1, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    t3.to(".navbar", {
+      backgroundColor:"black",
+      color:"white",
+      duration: 0.1, // Adjust the duration as needed
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
 
@@ -204,6 +245,28 @@ export default function Home() {
       duration: 0.2, // Adjust the duration as needed
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
+
+    t5.to(".intro,.navbar",{
+      backgroundColor:"white",
+      opacity: 1,
+      y: 0,
+      duration: 0.1, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    t5.to(".navbar",{
+     color:"black",
+      duration: 0.1, // Adjust the duration as needed
+      ease: "Linear.easeNone", // Adjust the easing function as needed
+    });
+
+    t5.to(".contact-header",{
+      color:"black",
+       duration: 0.1, // Adjust the duration as needed
+       ease: "Linear.easeNone", // Adjust the easing function as needed
+     });
+
+
 
     t7.to(".contact-details", {
       opacity: 1,
@@ -219,21 +282,6 @@ export default function Home() {
       ease: "Linear.easeNone", // Adjust the easing function as needed
     });
 
-    var t4 = gsap.timeline();
-    var animation = t4.to(".wrapimage", {
-      scale: 1.5,
-      duration: 0.5,
-      ease: "power1.inOut",
-    });
-
-    document.querySelectorAll(".wrapimage").forEach(function (element) {
-      element.addEventListener("mouseenter", function () {
-        animation.play();
-      });
-      element.addEventListener("mouseleave", function () {
-        animation.reverse();
-      });
-    });
 
     //Cursor Animation Code
     // gsap.set(".follower", { xPercent: -50, yPercent: -50 });
@@ -252,7 +300,7 @@ export default function Home() {
         y: e.clientY,
         cursor: "none",
       });
-      // gsap.to(follow, 0.9, { x: e.clientX, y: e.clientY });
+      
     });
 
 
@@ -354,8 +402,9 @@ export default function Home() {
     <div>
 
     
-   
-      <div className="navbar  top-0 z-50">
+    <div className="cursor"></div>
+      <div className="navbar  w-screen h-18  top-0 z-50 lg:w-full lg:h-20">
+        
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -391,10 +440,10 @@ export default function Home() {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-xl">MrUI</a>
+          <a className="btn btn-ghost text-2xl">MrUI</a>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-neutral" onClick={handleContact}>
+          <button className="btn btn-neutral lg:text-xl" onClick={handleContact}>
             Let's Talk
           </button>
         </div>
@@ -418,7 +467,7 @@ export default function Home() {
 
           {/* Introduction Section Starts*/}
           <div className=" intro h-full lg:h-max">
-          <div className="cursor"></div>
+         
             <h1 className="intro-text w-11/12  text-5xl py-28  lg:text-9xl lg:pt-28 ">
               I create elevating digital experiences that inspire and connect
               with people through development and design.
@@ -435,10 +484,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
 
@@ -453,20 +502,20 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
               </h1>
             </div>
 
             <div className="about-section w-full  pt-20 lg:flex justify-center  lg:h-screen lg:px-20">
-              <div className="image-section w-full px-6  lg:w-6/12">
+              <div className="image-section w-full px-6 img group inline-block overflow-hidden duration-200 ease-linear lg:w-6/12 lg:rounded-xl">
                 <img
-                  src="/images/sample.jpg"
-                  className="h-96 w-full object-cover lg:h-full rounded-md"
+                  src="/images/myimage.jpg"
+                  className="h-96 w-full object-cover  duration-700 ease-in-out group-hover:scale-105 lg:h-full rounded-md"
                 />
               </div>
 
@@ -496,7 +545,7 @@ export default function Home() {
             </div>
             {/*Skill Set Starts*/}
             <div className="professional-skillset w-64 text-center lg:w-full">
-              <div className="flex justify-center items-center  skillset-text text-5xl  lg:text-9xl pt-24 ">
+              <div className="flex justify-center items-center  skillset-text text-5xl  lg:text-9xl pt-48">
                 <svg
                   className="hidden sm:block sm:scale-125 xl:scale-[200%]"
                   width="20"
@@ -506,10 +555,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
                 <span className="px-10 text-special">
@@ -525,10 +574,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
               </div>
@@ -536,7 +585,7 @@ export default function Home() {
 
             <div className="skillset-description mt-10  grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-24 ">
               <div className="space-y-6">
-                <div className="space-y-3 text-white 2xl:space-y-10">
+                <div className="skillset-innertext space-y-3 text-white 2xl:space-y-10">
                   <h3 className="text-heading-3 2xl:text-7xl font-semibold leading-tight translate-y-10 opacity-1 text-3xl pl-5">
                     my expertises.
                   </h3>
@@ -572,7 +621,7 @@ export default function Home() {
 
             <div className=" skillset-description  mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-24">
               <div className="space-y-6">
-                <div className="space-y-3 text-white 2xl:space-y-10">
+                <div className="skillset-innertext space-y-3 text-white 2xl:space-y-10">
                   <h3 className="text-heading-3 2xl:text-7xl font-semibold leading-tight translate-y-10 opacity-1 text-3xl px-5">
                     my digital tool box.
                   </h3>
@@ -642,10 +691,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
                 <span className="px-10 text-special"> PROJECTS </span>
@@ -658,10 +707,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
               </div>
@@ -689,13 +738,13 @@ export default function Home() {
                     <div className="flex space-x-2 mb-3">
                       <p
                         className="rounded-full font-extralight bg-transparent  flex justify-center items-center px-6 py-0  text-sm text-body-4 2xl:text-3xl"
-                        style={{ border: "1px solid #b08968" }}
+                        style={{ border: "1px solid #b39c4d" }}
                       >
                         2023
                       </p>
                       <p
                         className="rounded-full font-extralight bg-transparent  flex justify-center items-center px-4 py-1 text-sm  text-body-4 2xl:text-3xl"
-                        style={{ border: "1px solid #b08968" }}
+                        style={{ border: "1px solid #b39c4d" }}
                       >
                         NextJS • TailwindCSS • Mongodb
                       </p>
@@ -733,13 +782,13 @@ export default function Home() {
                     <div className="flex space-x-2 mb-3">
                       <p
                         className="rounded-full font-extralight bg-transparent  flex justify-center items-center px-6 py-0  text-sm text-body-4 2xl:text-3xl"
-                        style={{ border: "1px solid #b08968" }}
+                        style={{ border: "1px solid #b39c4d" }}
                       >
                         2023
                       </p>
                       <p
                         className="rounded-full  font-extralight bg-transparent   flex justify-center items-center px-4 py-1 text-sm  text-body-4 2xl:text-3xl"
-                        style={{ border: "1px solid #b08968" }}
+                        style={{ border: "1px solid #b39c4d" }}
                       >
                         NextJS • TailwindCSS • Canvas
                       </p>
@@ -769,10 +818,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
                 <span className="px-10 text-special"> CONTACT </span>
@@ -785,10 +834,10 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.39876e-06 -2.79753e-06C6.26248e-07 8.83656 7.16352 16 16 16C24.8366 16 32 8.83656 32 0L1.39876e-06 -2.79753e-06Z"
-                    fill="#b08968"
+                    fill="#b39c4d"
                   ></path>
                 </svg>
               </div>
@@ -798,7 +847,7 @@ export default function Home() {
               <main className="py-14 ">
                 <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                   <div className="max-w-6xl space-y-3">
-                    <p className="text-white  font-semibold text-3xl lg:text-7xl">
+                    <p className="contact-header text-white  font-semibold text-3xl lg:text-7xl">
                       Love to hear from you ? Get in touch.
                     </p>
                     <p className=" text-md lg:text-xl">
@@ -833,31 +882,31 @@ export default function Home() {
           </div>
 
           {/*Footer Section Starts*/}
-          <footer class=" lg:flex lg:items-end lg:justify-between lg:text-xl px-5 py-4 flex justify-around text-body-4 md:text-body-3 bg-black text-sm text-gray-600">
-            <div class="flex flex-col md:flex-row md:w-[62.5vw] lg:w-[57.5vw] justify-between">
-              <div class="flex space-x-1">
+          <footer className="footer lg:flex lg:items-end lg:justify-between lg:text-xl px-5 py-4 flex justify-around text-body-4 md:text-body-3 bg-black text-sm text-gray-600">
+            <div className="flex flex-col md:flex-row md:w-[62.5vw] lg:w-[57.5vw] justify-between">
+              <div className="flex space-x-1">
                 <span className="font-light ">©</span>
                 <span className="font-light ">2023</span>
-                <span class="font-extrabold uppercase 2xl:text-body-1">
+                <span className="font-extrabold uppercase 2xl:text-body-1">
                   Mrunal Solkar
                 </span>
               </div>
               <div>
-                <span class=" text-body-4 2xl:text-body-1 font-light ">
+                <span className=" text-body-4 2xl:text-body-1 font-light ">
                   Site designed and coded with ❤️
                 </span>
               </div>
             </div>
             <button
-              class="col-span-2 flex items-center space-x-2 w-fit group 2xl:text-body-1 pl-2"
+              className="col-span-2 flex items-center space-x-2 w-fit group 2xl:text-body-1 pl-2"
               onClick={handleBackToTop}
             >
-              <span class="font-extrabold uppercase hover:font-black duration-200">
+              <span className="font-extrabold uppercase hover:font-black duration-200">
                 BACK TO TOP
               </span>
-              <span class="group-hover:-translate-y-3 duration-300 ease-in-out">
+              <span className="group-hover:-translate-y-3 duration-300 ease-in-out">
                 <svg
-                  class="-rotate-90"
+                  className="-rotate-90"
                   width="24"
                   height="24"
                   viewBox="0 0 200 200"
@@ -865,11 +914,11 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   {" "}
-                  <g clip-path="url(#clip0_238_1313)">
+                  <g clipPath="url(#clip0_238_1313)">
                     {" "}
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M4.37114e-06 2.76541e-06L7.54022e-06 50L100 100L2.18557e-06 150L0 200L100 150L100 200L200 150V100V50L100 0V50L4.37114e-06 2.76541e-06ZM100 50L100 100L100 150L200 100L100 50Z"
                       fill="url(#paint0_linear_238_1313)"
                     ></path>{" "}
@@ -885,7 +934,7 @@ export default function Home() {
                       gradientUnits="userSpaceOnUse"
                     >
                       {" "}
-                      <stop stop-color="#D1D1C7"></stop>{" "}
+                      <stop stopColor="#D1D1C7"></stop>{" "}
                     </linearGradient>{" "}
                   </defs>{" "}
                 </svg>

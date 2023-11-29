@@ -7,19 +7,18 @@ body{
   cursor: none;
 }
 .navbar{
-  background-color:#E3D5CA;
-  position: relative;
-  top: 0;
-  opacity: 1;
+  background-color:white;
+  position: fixed;
+  color:black;
 }
 
 
 .diff1{
-  background-color:#D5BDAF;
+  background-color:#b39c4d;
 }
 .intro{
   background-color: white;
-  color:#D5BDAF;
+  color:#b39c4d;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -93,6 +92,7 @@ body{
 
 .footer {
  overflow-x: hidden; /* Hide any content overflowing horizontally */
+ background-color: white;
 }
 
 .cursor {
@@ -102,7 +102,7 @@ body{
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #bc6c25;
+  background-color: #b39c4d;
   z-index: 2000;
   user-select: none;
   pointer-events: none;
