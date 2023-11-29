@@ -16,6 +16,7 @@ body{
 .diff1{
   background-color:#b39c4d;
 }
+
 .intro{
   background-color: white;
   color:#b39c4d;
@@ -112,6 +113,11 @@ body{
 
 .project-img{
   cursor:none;
+}
+
+.menu{
+  background-color: #343a40;
+  color:white;
 }
 
 @media screen and (max-width:767px) {

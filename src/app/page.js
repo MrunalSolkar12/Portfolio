@@ -265,7 +265,8 @@ export default function Home() {
        duration: 0.1, // Adjust the duration as needed
        ease: "Linear.easeNone", // Adjust the easing function as needed
      });
-
+     
+    
 
 
     t7.to(".contact-details", {
@@ -420,10 +421,8 @@ export default function Home() {
   return (
     <>
     <div>
-
-    
-    <div className="cursor"></div>
-      <div className="navbar  w-screen h-18  top-0 z-50 lg:w-full lg:h-20">
+      <div className="cursor"></div>
+      <div className="navbar w-screen h-18  top-0 z-50 lg:w-full lg:h-20">
         
         <div className="navbar-start">
           <div className="dropdown">
@@ -460,7 +459,7 @@ export default function Home() {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-2xl"><Image className="w-10 h-10" src="/images/logo.png" width={100} height={100}/></a>
+          <a className="btn btn-ghost text-2xl"><Image className="w-10 h-10" src="/images/logo1.png" width={100} height={100}/></a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-neutral lg:text-xl" onClick={handleContact}>
@@ -861,7 +860,7 @@ export default function Home() {
               <main className="py-14 ">
                 <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                   <div className="max-w-6xl space-y-3">
-                    <p className="contact-header text-white  font-semibold text-3xl lg:text-7xl">
+                    <p className="contact-header text-white font-semibold text-3xl lg:text-7xl">
                       Love to hear from you ? Get in touch.
                     </p>
                     <p className=" text-md lg:text-xl">
@@ -892,7 +891,7 @@ export default function Home() {
                 </ul>
                 <div className="pt-10 pl-4 flex space-x-4 ">
 
-                      <a hrfe="https://www.instagram.com/__mrunal12__/"><Image className="w-8 h-8 lg:w-12 lg:h-12" src="/images/insta.png" width={50} height={50}/></a>
+                      <a href="https://www.instagram.com/__mrunal12__/"><Image className="w-8 h-8 lg:w-12 lg:h-12" src="/images/insta.png" width={50} height={50}/></a>
                       <a href="https://github.com/MrunalSolkar12/"><Image  className="w-8 h-8  lg:w-12 lg:h-12"  src="/images/github.png" width={50} height={50}/></a>
                       <a href="https://www.linkedin.com/in/mrunal-solkar-49a1ba226/"><Image  className="w-8 h-8  lg:w-12 lg:h-12"  src="/images/linkedin.png" width={50} height={50}/></a>
 
