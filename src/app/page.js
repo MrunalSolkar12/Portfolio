@@ -544,7 +544,7 @@ export default function Home() {
 
                 <h2 className="about-text text-lg pt-4 font-light  lg:text-4xl lg:pt-16 ">
                   {" "}
-                  I am an independent Full-Stack developer, primarly frontend developer based in Mumbai, India.
+                  I am an independent Full-Stack developer, primarly focused as frontend developer based in Mumbai, India.
                 </h2>
 
                 <h2 className="about-text text-lg pt-6 font-light lg:text-4xl lg:pt-16">
