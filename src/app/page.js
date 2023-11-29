@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-//import Image from "next/image";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
@@ -393,7 +393,29 @@ export default function Home() {
     });
   };
 
+  const handleSkillset = () => {
+    gsap.to(window, {
+      duration: 2, // Animation duration in seconds
+      scrollTo: ".skillset-text",
+      ease: "power2.out",
+    });
+  };
+
+  const handleProjects = () => {
+    gsap.to(window, {
+      duration: 2, // Animation duration in seconds
+      scrollTo: ".projects-text",
+      ease: "power2.out",
+    });
+  };
   
+  const handleAbout = () => {
+    gsap.to(window, {
+      duration: 2, // Animation duration in seconds
+      scrollTo: ".aboutme-text",
+      ease: "power2.out",
+    });
+  };
 
   return (
     <>
@@ -426,19 +448,19 @@ export default function Home() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Homepage</a>
+                <a onClick={handleSkillset}>SKillSet</a>
               </li>
               <li>
-                <a>Portfolio</a>
+                <a onClick={handleProjects}>Projects</a>
               </li>
               <li>
-                <a>About</a>
+                <a onClick={handleAbout}>About</a>
               </li>
             </ul>
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-2xl">MrUI</a>
+          <a className="btn btn-ghost text-2xl"><Image className="w-10 h-10" src="/images/logo.png" width={100} height={100}/></a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-neutral lg:text-xl" onClick={handleContact}>
@@ -524,20 +546,16 @@ export default function Home() {
 
                 <h2 className="about-text text-lg pt-4 font-light  lg:text-4xl lg:pt-16 ">
                   {" "}
-                  I am an independent frontend developer, UI/UX designer and
-                  creator based in Melbourne, Australia.
+                  I am an independent Full-0Stack developer, primarly frontend developer based in Mumbai, India.
                 </h2>
 
                 <h2 className="about-text text-lg pt-6 font-light lg:text-4xl lg:pt-16">
-                  I specialize in crafting elevated, intuitive, and minimalistic
-                  designs for startups and small businesses to help them stand
-                  out in the digital landscape with a powerful impact. 😎
+                My expertise lies in creating comprehensive and user-friendly designs, coupled with robust backend development, aimed at providing startups and small businesses with a distinctive digital presence. 
+               
                 </h2>
 
                 <h2 className="about-text text-lg pt-6 font-light lg:text-4xl lg:pt-16">
-                  When I am not developing or designing, I enjoy creating videos
-                  that talk about frontend development, productivity and design
-                  on YouTube 📸{" "}
+                My goal is to make a profound impact through elevated and intuitive solutions.  😎
                 </h2>
               </div>
             </div>
@@ -600,20 +618,18 @@ export default function Home() {
               </div>
               <div className="select-none leading-[2.3rem] text-secondary-500 md:leading-[2.5rem] lg:leading-[3.4rem] translate-y-10 opacity-1 px-5">
                 <p className="font-general text-special 2xl:text-7xl font-extrabold text-4xl">
-                  Web Development
+                  Frontend 
                 </p>
                 <p className="font-general text-special 2xl:text-7xl font-extrabold  text-4xl">
-                  Web Design
+                 Backend 
                 </p>
                 <p className="font-general text-special 2xl:text-7xl font-extrabold  text-4xl">
-                  Wireframing
+                 API Development
                 </p>
                 <p className="font-general text-special 2xl:text-7xl font-extrabold  text-4xl">
-                  UI/UX Design
+                Problem Solving
                 </p>
-                <p className="font-general text-special 2xl:text-7xl font-extrabold  text-4xl">
-                  Branding
-                </p>
+               
               </div>
             </div>
 
@@ -720,15 +736,15 @@ export default function Home() {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://musical-stroopwafel-1c2327.netlify.app/landing.html"
+                    href="https://github.com/MrunalSolkar12/Pixels"
                     className="img group inline-block overflow-hidden duration-200 ease-linear hover:rounded-3xl"
                   >
-                    <img 
-                      className="project-img w-screen h-80 object-cover duration-700 ease-in-out group-hover:scale-105 lg:h-auto"
+                    <Image 
+                      className="project-img w-screen h-80 duration-700 ease-in-out group-hover:scale-105 lg:h-auto"
                       src="/images/Capture.png"
                       alt="IBGroup vietnam website mockup"
-                      width="800"
-                      height="600"
+                      width={2000}
+                      height={2000}
                     />
                     
                   </a>
@@ -765,15 +781,15 @@ export default function Home() {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://musical-stroopwafel-1c2327.netlify.app/landing.html"
+                    href="https://white-board-test.vercel.app/"
                     className="img group inline-block overflow-hidden duration-200 ease-linear hover:rounded-3xl"
                   >
-                    <img
+                    <Image
                       className="project-img  w-screen h-64 duration-700 ease-in-out group-hover:scale-105 lg:h-auto"
                       src="/images/WhiteBoard2.png"
                       alt="IBGroup vietnam website mockup"
-                      width="800"
-                      height="600"
+                      width={2000}
+                      height={2000}
                     />
                   </a>
                   <div className="mt-4 ">
@@ -874,7 +890,16 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <div className="pt-10 pl-4 flex space-x-4 ">
+
+                      <a hrfe="https://www.instagram.com/__mrunal12__/"><Image className="w-8 h-8 lg:w-12 lg:h-12" src="/images/insta.png" width={50} height={50}/></a>
+                      <a href="https://github.com/MrunalSolkar12/"><Image  className="w-8 h-8  lg:w-12 lg:h-12"  src="/images/github.png" width={50} height={50}/></a>
+                      <a href="https://www.linkedin.com/in/mrunal-solkar-49a1ba226/"><Image  className="w-8 h-8  lg:w-12 lg:h-12"  src="/images/linkedin.png" width={50} height={50}/></a>
+
+                </div>
               </div>
+
+             
             </div>
             {/*Contact Section Ends*/}
           </div>
